@@ -1,0 +1,37 @@
+CREATE DATABASE IF NOT EXISTS todophp;
+USE todophp;
+
+CREATE TABLE IF NOT EXISTS `users` (
+    `id` INT AUTO_INCREMENT PRIMARY KEY,
+    `username` VARCHAR(255) NOT NULL,
+    `email` VARCHAR(255) NOT NULL,
+    `password` VARCHAR(255) NOT NULL,
+    `city` VARCHAR(255) NOT NULL,
+    `status` VARCHAR(255) DEFAULT 'user',
+    `usertype` VARCHAR(255) DEFAULT 'user', -- Adiciona esta linha para incluir a coluna 'usertype'
+    `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS `Lists` (
+    `id` INT AUTO_INCREMENT PRIMARY KEY,
+    `user_id` INT NOT NULL,
+    `name` VARCHAR(255) NOT NULL,
+    `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS `todolist` (
+    `id` INT AUTO_INCREMENT PRIMARY KEY,
+    `user_id` INT NOT NULL,
+    `list_id` INT NOT NULL,
+    `tasks` TEXT NOT NULL,
+    `due_date` DATE,
+    `priority` VARCHAR(255),
+    `status` VARCHAR(255),
+    `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE,
+    FOREIGN KEY (`list_id`) REFERENCES `Lists` (`id`) ON DELETE CASCADE
+);

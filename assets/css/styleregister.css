@@ -1,0 +1,105 @@
+body {
+    background-image: url('../images/back6.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+.motivational-phrase {
+    text-align: left;
+    position: absolute;
+    top: 50%;
+    left: 47%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-family: Impact, fantasy;
+}
+
+.formcontainer {
+    position: absolute;
+    top: 27%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 50%;
+    height: 150px;
+    max-width: 400px;
+}
+
+.formcontainer h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+.login-form {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background-color: #f2f2f2;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 48px;
+    width: 300px;
+    margin-right: 10px;
+}
+
+.logo h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+}
+
+.signup-form h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+.formcontainer input[type='text'],
+.formcontainer input[type='email'],
+.formcontainer input[type='password'],
+.formcontainer select#country,
+.formcontainer select#state,
+.formcontainer select#city {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    font-size: 14px;
+    color: #333;
+}
+
+
+.formcontainer button {
+    width: 100%;
+    background-color: #82afc2;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 8px;
+}
+
+.formcontainer button:hover {
+    background-color: #293c4d;
+}

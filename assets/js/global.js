@@ -1,0 +1,4 @@
+window.global = {
+    selectedListId: null,
+  };
+  
